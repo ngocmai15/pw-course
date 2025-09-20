@@ -19,6 +19,8 @@ git reset HEAD ~N
 
 - Khi khởi tạo repo (*git init*), nhánh mặc định sẽ được tạo ra
 
+- Luôn pull code về trước khi tạo nhánh mới
+
 ### Một số câu lệnh với nhánh:
 1. **Cấu hình:** git config --global init.defaultBranch main
 
@@ -34,9 +36,69 @@ git reset HEAD ~N
 
 4. **Chuyển sang nhánh mới:** git checkout <tên_branch>
 
-Xoá branch: git branch -D <tên nhánh>
-5.  Vừa tạo, vừa chuyển sang nhánh mới: git checkout -b <tên>
+5.  **Vừa tạo, vừa chuyển sang nhánh mới:** git checkout -b <tên>
+
+6. **Xoá branch:** git branch -D <tên nhánh>
+
+## .gitignore file: Dùng để bỏ qua các file không cần git theo dõi
+- Ignore file: <file_name>
+- Ignore folder: <folder_name>/
+
 # Javascript basic 
-## Object
-## Array
-## Function
+## Conventions:
+- snake_case: chưa dùng
+- kebab -case: tên file
+- camelCase: tên biến
+- PascalCase: tên class
+
+## console.log with backtick:
+VD:
+let name = "Mai";
+
+console.log(`Toi la ${name}`);
+
+## Object: 
+- Dùng để lưu trữ tập hợp các giá trị vào cùng 1 biến hoặc hằng số
+- Khai báo:
+
+let/const <ten_object> = {
+
+    <thuoc_tinh>: <gia_tri>,
+    ...
+
+}
+
+VD:
+const product = {
+    "name": "Laptop",
+    "price": 500,
+    "isWindow": true,
+    "manufacturer": {
+        "name": "Acer",
+        "year": 2024
+    }
+}
+
+- Sử dụng: 
+
+console.log("manufacturer name =", product.manufacturer.name);
+
+console.log("price =", product["price"]);
+
+- Gán lại:
+
+product.price - 400
+
+product["manufacturer"]["year"] = 2025
+
+## Array // Mảng
+
+## Function // Hàm
+- Là đoạn code được đặt tên và có thể tái sử dụng, thực hiện 1 nhiệm vụ hoặc 1 tính toán cụ thể
+- Khai báo:
+
+function <nameFunction>() {
+
+    //code
+
+}
