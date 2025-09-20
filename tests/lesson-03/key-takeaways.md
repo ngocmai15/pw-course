@@ -40,6 +40,12 @@ git reset HEAD ~N
 
 6. **Xoá branch:** git branch -D <tên nhánh>
 
+7. **Kiểm tra lịch sử commit:** git log
+
+8. **Checkout 1 revision bất kì:** git checkout <revision>
+
+// Để trở về revision (đi về thời điểm quá khứ xem lúc ấy code của mình có gì)
+
 ## .gitignore file: Dùng để bỏ qua các file không cần git theo dõi
 - Ignore file: <file_name>
 - Ignore folder: <folder_name>/
@@ -47,7 +53,7 @@ git reset HEAD ~N
 # Javascript basic 
 ## Conventions:
 - snake_case: chưa dùng
-- kebab -case: tên file
+- kebab-case: tên file
 - camelCase: tên biến
 - PascalCase: tên class
 
@@ -70,12 +76,12 @@ let/const <ten_object> = {
 
 VD:
 const product = {
-    "name": "Laptop",
-    "price": 500,
-    "isWindow": true,
-    "manufacturer": {
-        "name": "Acer",
-        "year": 2024
+    name: "Laptop",
+    price: 500,
+    isWindow: true,
+    manufacturer: {
+        name: "Acer",
+        year: 2024
     }
 }
 
@@ -91,14 +97,112 @@ product.price - 400
 
 product["manufacturer"]["year"] = 2025
 
+- Thay đổi thuộc tính của Object: 
+
+Ví dụ chỉ thay giá trị của *name* trong object *student*:
+
+const student = {“name”: “alex”, “age”: 20}
+
+student.name = “Nagi”; // Hợp lệ
+
+- Thêm thuộc tính vào Object: dùng dấu . hoặc ngoặc vuông [] để định nghĩa thuộc tính mới
+
+VD:
+
+let bike = {
+make: 'Yamaha',
+model: 'YZF-R3'
+};
+
+bike.color = “Blue”;
+bike[“price new”] = 100;
+
+console.log(bike);
+{make: 'Yamaha', model: 'YZF-R3', color: 'Blue', ‘price new’ : 100}
+
+- Xóa thuộc tính của Object: dùng hàm *delete*
+
+VD:
+
+let employee = {
+name: 'Le Van C',
+age: 30,
+};
+
+delete employee.age;
+
+console.log(employee);
+
+Kết quả:
+{name: 'Le Van C'}
+
+### Lưu ý:
+- Nếu thay cả object bằng một object mới → lỗi. 
+
+Ví dụ:
+
+const student = {“name”: “alex”, “age”: 20}
+
+student = {“name”: “Nagi”, “age”: 18} // lỗi
+
 ## Array // Mảng
+- Khai báo: 
+
+const/let <tên_biến> = ["Mai", 15, , true]
+
+- Truy xuất độ dài mảng: 
+
+console.log(<tên_biến>.length);
+
+- Lấy phần tử theo index:
+
+console.log(<tên_biến>[index]);
+
+- Thêm phần tử vào mảng: dùng hàm *push*
+
+VD:
+
+const arr = [1, 2];
+arr.push(3);
+
+console.log(arr); // Kết quả in ra: [1, 2, 3]
 
 ## Function // Hàm
 - Là đoạn code được đặt tên và có thể tái sử dụng, thực hiện 1 nhiệm vụ hoặc 1 tính toán cụ thể
 - Khai báo:
 
-function <nameFunction>() {
+function <name_Function>() {
 
     //code
 
 }
+
+- Sử dụng:
+
+<name_Function>();
+
+- Parameter:
+
+VD:
+
+function countBeforeHello(n) {     
+    for (let i = 0; i <= 5; i++) {
+        console.log(i);
+    }
+    console.log("Hello World");
+}
+
+countBeforeHello(10);
+
+- Return value:
+
+VD:
+
+function sum(a, b) {
+    const sum = a + b;
+    return sum;
+}
+
+const total = sum(5, 6);
+
+console.log(total);
